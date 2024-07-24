@@ -1,0 +1,335 @@
+/* Estilo global para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif; /* Fuente de texto */
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin relleno */
+  background-color: #E6E6FA; /* Color de fondo lavanda */
+}
+
+/* Estilos para el encabezado */
+.header {
+  background-color: #EC6AAB; /* Color de fondo rosado */
+  color: #333; /* Color de texto gris oscuro */
+  padding: 1rem; /* Relleno de 1 rem */
+  display: flex; /* Diseño flex */
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center; /* Alineación centrada de los elementos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del encabezado */
+}
+
+/* Estilos para el título en el encabezado */
+.header h1 {
+  margin: 0; /* Sin margen */
+}
+
+/* Estilos para los enlaces de navegación en el encabezado */
+.header nav a {
+  color: #333; /* Color del texto gris oscuro */
+  margin: 0 1rem; /* Margen lateral */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.header nav a:hover {
+  text-decoration: underline; /* Agrega subrayado al pasar el cursor */
+}
+
+/* Estilos para la lista de productos */
+.product-list {
+  display: flex; /* Diseño flex */
+  justify-content: space-around; /* Espacio alrededor de los elementos */
+  padding: 2rem; /* Relleno */
+  gap: 1.5rem; /* Espacio entre elementos */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+}
+
+/* Estilos para un producto individual */
+.product {
+  background-color: #fff; /* Fondo blanco */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 1rem; /* Relleno */
+  text-align: center; /* Texto centrado */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  width: 250px; /* Ancho fijo */
+  transition: transform 0.2s; /* Transición suave al transformarse */
+}
+
+/* Estilos para la imagen del producto */
+.product img {
+  max-width: 100%; /* Ancho máximo del 100% */
+  height: auto; /* Altura automática */
+  border-bottom: 1px solid #ddd; /* Borde inferior */
+  margin-bottom: 1rem; /* Margen inferior */
+}
+
+/* Estilos para el título del producto */
+.product h2 {
+  margin: 0.5rem 0; /* Margen superior e inferior */
+}
+
+/* Estilos para la descripción del producto */
+.product p {
+  color: #888; /* Color del texto gris claro */
+  margin: 0.5rem 0; /* Margen superior e inferior */
+}
+
+/* Estilos para los controles de cantidad */
+.quantity-controls {
+  display: flex; /* Diseño flex */
+  justify-content: center; /* Alineación centrada */
+  align-items: center; /* Alineación centrada */
+  margin: 0.5rem 0; /* Margen superior e inferior */
+}
+
+/* Estilos para los botones de los controles de cantidad */
+.quantity-controls button {
+  background-color: #f4f4f4; /* Fondo gris claro */
+  border: 1px solid #ddd; /* Borde gris claro */
+  padding: 0.5rem; /* Relleno */
+  cursor: pointer; /* Cursor de puntero */
+}
+
+/* Estilos para el texto dentro de los controles de cantidad */
+.quantity-controls span {
+  margin: 0 1rem; /* Margen lateral */
+}
+
+/* Estilos para el botón de acción del producto */
+.product button {
+  background-color: #E88BBA; /* Fondo rosado */
+  color: #333; /* Color del texto gris oscuro */
+  border: none; /* Sin borde */
+  padding: 0.5rem 1rem; /* Relleno */
+  cursor: pointer; /* Cursor de puntero */
+  border-radius: 4px; /* Bordes redondeados */
+  transition: background-color 0.2s; /* Transición suave del color de fondo */
+}
+
+/* Estilos para el botón de acción del producto al pasar el cursor */
+.product button:hover {
+  background-color: #EC6AAB; /* Cambio de color de fondo */
+}
+
+/* Estilos para el menú del carrito */
+.cart-menu {
+  position: fixed; /* Posición fija */
+  right: 0; /* Alineado a la derecha */
+  top: 0; /* Alineado arriba */
+  width: 350px; /* Ancho fijo */
+  height: 50%; /* Altura del 50% */
+  background-color: #fff; /* Fondo blanco */
+  border-left: 1px solid #ccc; /* Borde izquierdo */
+  padding: 1rem; /* Relleno */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra */
+  display: flex; /* Diseño flex */
+  flex-direction: column; /* Dirección de columna */
+  overflow-y: auto; /* Desbordamiento vertical */
+}
+
+/* Estilos para el botón de cerrar el menú del carrito */
+.cart-menu .close-button {
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  font-size: 1.5rem; /* Tamaño de fuente */
+  align-self: flex-end; /* Alineación a la derecha */
+  cursor: pointer; /* Cursor de puntero */
+}
+
+/* Estilos para el título en el menú del carrito */
+.cart-menu h2 {
+  margin-top: 0; /* Sin margen superior */
+}
+
+/* Estilos para la lista de elementos del carrito */
+.cart-menu ul {
+  list-style: none; /* Sin estilo de lista */
+  padding: 0; /* Sin relleno */
+  flex-grow: 1; /* Crecimiento flexible */
+  overflow-y: auto; /* Desbordamiento vertical */
+}
+
+/* Estilos para un elemento individual del carrito */
+.cart-item {
+  padding: 0.5rem 0; /* Relleno vertical */
+  border-bottom: 1px solid #ddd; /* Borde inferior */
+}
+
+/* Estilos para el nombre del elemento del carrito */
+.cart-item-name {
+  display: block; /* Mostrar como bloque */
+  margin-bottom: 0.5rem; /* Margen inferior */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilos para los controles de cantidad en el menú del carrito */
+.cart-menu .quantity-controls {
+  display: flex; /* Diseño flex */
+  align-items: center; /* Alineación centrada */
+}
+
+/* Estilos para los botones de los controles de cantidad en el menú del carrito */
+.cart-menu .quantity-controls button {
+  margin: 0 0.5rem; /* Margen lateral */
+}
+
+/* Estilos para el botón de eliminar del menú del carrito */
+.cart-menu .remove-button {
+  margin-left: 1rem; /* Margen izquierdo */
+  background-color: #dc3545; /* Fondo rojo */
+  color: #fff; /* Color del texto blanco */
+}
+
+/* Estilos para el total del carrito */
+.cart-total {
+  margin-top: 1rem; /* Margen superior */
+  font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+/* Estilos para las acciones del menú del carrito */
+.cart-menu-actions {
+  display: flex; /* Diseño flex */
+  justify-content: space-between; /* Espacio entre elementos */
+  margin-top: 1rem; /* Margen superior */
+}
+
+/* Estilos para los botones y enlaces de las acciones del menú del carrito */
+.cart-menu-actions button, .cart-menu-actions a {
+  background-color: #E88BBA; /* Fondo rosado */
+  color: #333; /* Color del texto gris oscuro */
+  border: none; /* Sin borde */
+  padding: 0.5rem 1rem; /* Relleno */
+  text-decoration: none; /* Sin subrayado */
+  text-align: center; /* Texto centrado */
+  border-radius: 4px; /* Bordes redondeados */
+  transition: background-color 0.2s; /* Transición suave del color de fondo */
+  margin: 0 0.5rem; /* Margen lateral */
+}
+
+/* Estilos para los botones y enlaces de las acciones del menú del carrito al pasar el cursor */
+.cart-menu-actions button:hover, .cart-menu-actions a:hover {
+  background-color: #EC6AAB; /* Cambio de color de fondo */
+}
+
+/* Estilos generales para las páginas del carrito, login, formulario de pago y factura */
+.cart-page, .login-page, .payment-form, .invoice-page {
+  padding: 2rem; /* Relleno */
+}
+
+/* Estilos para los títulos en las páginas del carrito, login, formulario de pago y factura */
+.cart-page h2, .login-page h2, .payment-form h2, .invoice-page h2 {
+  margin-top: 0; /* Sin margen superior */
+}
+
+/* Estilos para la lista en la página del carrito */
+.cart-page ul {
+  list-style: none; /* Sin estilo de lista */
+  padding: 0; /* Sin relleno */
+}
+
+/* Estilos para un elemento individual en la página del carrito */
+.cart-page li {
+  display: flex; /* Diseño flex */
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center; /* Alineación centrada */
+  padding: 0.5rem 0; /* Relleno vertical */
+  border-bottom: 1px solid #ddd; /* Borde inferior */
+}
+
+/* Estilos para los controles de cantidad en la página del carrito */
+.cart-page .quantity-controls {
+  display: flex; /* Diseño flex */
+  align-items: center; /* Alineación centrada */
+}
+
+/* Estilos para los botones de los controles de cantidad en la página del carrito */
+.cart-page .quantity-controls button {
+  margin: 0 0.5rem; /* Margen lateral */
+}
+
+/* Estilos para el total del carrito en la página del carrito */
+.cart-page .cart-total {
+  margin-top: 1rem; /* Margen superior */
+  font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+/* Estilos para las acciones del menú del carrito en la página del carrito */
+.cart-page .cart-menu-actions {
+  display: flex; /* Diseño flex */
+  justify-content: center; /* Alineación centrada */
+  margin-top: 1rem; /* Margen superior */
+}
+
+/* Estilos para los enlaces de las acciones del menú del carrito en la página del carrito */
+.cart-page .cart-menu-actions a {
+  background-color: #E88BBA; /* Fondo rosado */
+  color: #333; /* Color del texto gris oscuro */
+  border: none; /* Sin borde */
+  padding: 0.5rem 1rem; /* Relleno */
+  text-decoration: none; /* Sin subrayado */
+  text-align: center; /* Texto centrado */
+  border-radius: 4px; /* Bordes redondeados */
+  transition: background-color 0.2s; /* Transición suave del color de fondo */
+}
+
+/* Estilos para los enlaces de las acciones del menú del carrito en la página del carrito al pasar el cursor */
+.cart-page .cart-menu-actions a:hover {
+  background-color: #EC6AAB; /* Cambio de color de fondo */
+}
+
+/* Estilos para los elementos del formulario en las páginas de login y formulario de pago */
+.login-page form div, .payment-form form div {
+  margin-bottom: 1rem; /* Margen inferior */
+}
+
+/* Estilos para las etiquetas en los formularios de login y formulario de pago */
+.login-page form label, .payment-form form label {
+  display: block; /* Mostrar como bloque */
+  margin-bottom: 0.5rem; /* Margen inferior */
+}
+
+/* Estilos para los campos de entrada en los formularios de login y formulario de pago */
+.login-page form input, .payment-form form input, .payment-form form select {
+  width: 100%; /* Ancho del 100% */
+  padding: 0.5rem; /* Relleno */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 4px; /* Bordes redondeados */
+  
+}
+
+/* Estilos para los párrafos en la página de factura */
+.invoice-page p {
+  margin: 1rem 0; /* Margen superior e inferior */
+
+}
+
+/* Estilos para los botones de los formularios de login y formulario de pago */
+.login-page form button, .payment-form form button {
+  background-color: #E88BBA; /* Rosado */
+  color: #333; /* Color del texto gris oscuro */
+  border-color: #E88BBA;
+  padding: 0.5rem 1rem; /* Ajusta el relleno si es necesario */
+  border-radius: 4px; /* Mantener el radio de las esquinas redondeadas */
+  transition: background-color 0.3s ease; /* Efecto suave al pasar el cursor */
+}
+
+/* Estilos para los botones en los formularios de login y formulario de pago al pasar el cursor */
+.login-page form button:hover, .payment-form form button:hover {
+  background-color: #EC6AAB; /* Cambio de color de fondo */
+}
+
+/* Estilos para el botón de prueba */
+.test {
+    background-color: #E58BB8; /* Rosado */
+    color: #333; /* Color del texto gris oscuro */
+    border: 2px solid #E58BB8; /* Borde rosado */
+    padding: 10px 20px; /* Ajusta el relleno si es necesario */
+    border-radius: 4px; /* Mantener el radio de las esquinas redondeadas */
+    transition: background-color 0.3s ease; /* Efecto suave al pasar el cursor */
+    margin-right: 10px; /* Añadir margen a la derecha */
+}
+
+/* Estilos para el botón de prueba al pasar el cursor */
+.test:hover {
+    background-color: #EC6AB4; /* Cambio de color de fondo */
+}
