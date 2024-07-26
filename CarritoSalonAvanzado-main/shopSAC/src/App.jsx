@@ -1,6 +1,6 @@
 // Importación de React y Hooks necesarios
-import React, { useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'; // Importar useEffect
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'; // Importar useLocation
 
 // Importación de los componentes
 import Header from './components/Header';
@@ -10,19 +10,10 @@ import CartPage from './components/CartPage';
 import SalesReport from './components/SalesReport';
 import InvoiceForm from './components/InvoiceForm';
 import InvoicePDF from './components/InvoicePDF';
+import axios from 'axios'; // Importar axios
 
 // Datos iniciales de los productos
-const initialProducts = [
-  { id: 1, name: 'Secador De Uñas Lampara Led', price: 49.99, image: '/images/Lampara.jpg' },
-  { id: 2, name: 'Estuche Kit Uñas', price: 39.99, image: '/images/Kituñas.jpg' },
-  { id: 3, name: 'Removedor de Esmalte', price: 6.99, image: '/images/Removedor.jpg' },
-  { id: 4, name: 'Lima' , price: 29.99, image: '/images/Lima.jpg' },
-  { id: 5, name: 'Corta Uñas', price: 14.99, image: '/images/Cortauñas.jpg' },
-  { id: 6, name: 'Alicate Cortacuticula', price: 10.99, image: '/images/Alicate.jpg' },
-  { id: 7, name: 'Esmaltes Masglo', price: 7.99, image: '/images/Esmalte.jpg' },
-  { id: 8, name: 'Separadores de Dedos', price: 4.99, image: '/images/Separadores.jpg' },
-  { id: 9, name: 'Raspacallos', price: 2.99, image: '/images/Raspacallos.jpg' },
-];
+const initialProducts = [];
 
 // Datos iniciales de las ventas
 const initialSalesData = [
@@ -41,15 +32,53 @@ const initialSalesData = [
   { time: '2024-06-01', value: 700 },
 ];
 
+// Función de mapeo para transformar los datos de la API
+const mapProductData = (product) => {
+  return {
+    id: product._id,
+    name: product.nombre, 
+    price: product.precio,
+    imagen: product.imagen,
+    // Agrega más mapeos según sea necesario
+  };
+};
+
 // Componente principal de la aplicación
 const App = () => {
    // Estado para los productos, datos de ventas y el carrito
-  const [products] = useState(initialProducts);
+  const [products, setProducts] = useState(initialProducts);
   const [salesData] = useState(initialSalesData);
   const [cartItems, setCartItems] = useState([]);
   const [showCartMenu, setShowCartMenu] = useState(false);
   const [paymentInfo, setPaymentInfo] = useState({});
   const navigate = useNavigate();
+  const location = useLocation(); // Usar useLocation para rastrear la ubicación
+
+  // Hook useEffect para cargar productos desde la API cuando la ruta es la raíz ('/')
+  // Dependencias: location.pathname (se ejecutará cuando cambie)
+
+  // Define una función asíncrona para obtener los productos desde la API
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        // Realiza una solicitud GET a la API para obtener los productos
+        const response = await axios.get('http://localhost:5000/api/productos');
+        console.log('Productos desde la API:', response.data);
+        // Mapeamos los productos antes de establecerlos en el estado
+        const mappedProducts = response.data.map(mapProductData);
+        // Actualiza el estado con los productos mapeados
+        setProducts(mappedProducts);
+      } catch (error) {
+        // Maneja y registra cualquier error que ocurra durante la solicitud
+        console.error('Error al obtener los productos', error);
+      }
+    };
+
+    // Verifica si la ruta actual es la raíz ('/') antes de llamar a fetchProducts
+    if (location.pathname === '/') {
+      fetchProducts();
+    }
+  }, [location.pathname]); // El useEffect se ejecuta cuando cambia location.pathname
 
   // Función para agregar un producto al carrito
   const handleAddToCart = (product, quantity) => {

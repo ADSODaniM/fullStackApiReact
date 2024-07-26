@@ -6,11 +6,13 @@ const Product = ({ product, onAddToCart }) => {
   // Utilizamos el hook useState para manejar el estado de la cantidad del producto
   const [quantity, setQuantity] = useState(1);
 
+  const imageURL = `http://localhost:5000/uploads/${product.imagen}`;
+
   return (
     // Contenedor principal del producto con la clase "product"
     <div className="product">
       {/* Imagen del producto */}
-      <img src={product.image} alt={product.name} />
+      <img src={imageURL} alt={product.name} />
       {/* Nombre del producto */}
       <h2>{product.name}</h2>
       {/* Precio del producto formateado a dos decimales */}
