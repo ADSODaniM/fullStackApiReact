@@ -11,6 +11,8 @@ import SalesReport from './components/SalesReport';
 import InvoiceForm from './components/InvoiceForm';
 import InvoicePDF from './components/InvoicePDF';
 import axios from 'axios'; // Importar axios
+import Register from './components/Register';
+import Login from './components/Login';
 
 // Datos iniciales de los productos
 const initialProducts = [];
@@ -124,6 +126,15 @@ const App = () => {
     setPaymentInfo(info);
   };
 
+  // Definición del componente PrivateRoute
+  const PrivateRoute = ({ children }) => {
+    // Obtiene el rol del usuario del localStorage
+    const role = localStorage.getItem('role');
+      // Si el rol es 'admin', renderiza los componentes hijos
+      // Si el rol no es 'admin', muestra un mensaje de acceso denegado
+    return role === 'admin' ? children : <div>No tienes acceso a esta página</div>;
+  };
+
   return (
     <div className="app">
   
@@ -158,7 +169,15 @@ const App = () => {
 
         {/* Ruta para la vista PDF de la factura. Se renderiza en "/invoice-pdf" */}
         <Route path="/invoice-pdf" element={<InvoicePDF />} />
-        
+
+        {/* Ruta para el registro de usuarios  */}
+        <Route path="/register" element={<Register />} />
+        {/* Cuando la URL coincide con "/register", se renderiza el componente Register */}
+
+        {/* Ruta para el inicio de sesión */}
+        <Route path="/login" element={<Login />} />
+        {/* Cuando la URL coincide con "/login", se renderiza el componente Login */}
+
       </Routes>
             {/* Condicional para mostrar el menú del carrito si showCartMenu es verdadero */}
       {showCartMenu && (
