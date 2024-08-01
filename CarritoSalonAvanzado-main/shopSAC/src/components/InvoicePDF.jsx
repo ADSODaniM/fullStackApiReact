@@ -104,7 +104,7 @@ const InvoicePDF = () => {
       startY: yOffset,
       theme: 'striped',
       styles: { fontSize: 10, cellPadding: 3 },
-      headStyles: { fillColor: [41, 128, 185], textColor: [255, 255, 255] }, // Color de fondo del encabezado
+      headStyles: { fillColor: [232, 139, 186], textColor: [255, 255, 255] }, // Color de fondo del encabezado
       alternateRowStyles: { fillColor: [240, 240, 240] } // Color de fondo alternativo para las filas
     });
 
@@ -117,7 +117,7 @@ const InvoicePDF = () => {
     // Pie de página
     doc.setFontSize(12);
     doc.setFont('helvetica', 'italic');
-    doc.setTextColor(0, 128, 0); // Verde
+    doc.setTextColor(236, 106, 171); // Rosado
     doc.text('Gracias por su compra', 105, finalY + 20, null, null, 'center');
     doc.text('Por favor, conserve esta factura para sus registros', 105, finalY + 30, null, null, 'center');
 
@@ -126,7 +126,7 @@ const InvoicePDF = () => {
   };
 
   return (
-    <div className="payment-form">
+    <div className="payment-form" style={{ textAlign: 'left' }}>
       <h1>Factura</h1>
       <p>Nombre: {name}</p>
       <p>Correo: {email}</p>

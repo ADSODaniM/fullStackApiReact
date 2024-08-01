@@ -334,3 +334,695 @@ body {
     background-color: #EC6AB4; /* Cambio de color de fondo */
 }
 
+/* Estilos para el modalProducto */
+.modalProducto-overlay {
+  position: fixed; /* Fija la posición del overlay para cubrir toda la pantalla */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo con opacidad para un efecto de sombreado */
+  display: flex; /* Centra el modal tanto horizontal como verticalmente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que el overlay esté por encima de otros elementos */
+}
+
+.modalProducto {
+  background-color: #fff; /* Color de fondo del modal */
+  padding: 2rem; /* Espaciado interno del modal */
+  border-radius: 8px; /* Bordes redondeados del modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el modal */
+  width: 400px; /* Ancho del modal */
+  max-width: 100%; /* Asegura que el modal no sea más ancho que el contenedor */
+  position: relative; /* Posición relativa para posicionar elementos internos */
+  z-index: 1001; /* Asegura que el modal esté por encima del overlay */
+}
+
+.modalProducto h2 {
+  margin-top: 0; /* Elimina el margen superior del encabezado */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+.modalProducto form label {
+  display: block; /* Hace que las etiquetas se muestren como bloques */
+  margin-bottom: 0.5rem; /* Espacio debajo de las etiquetas */
+  font-weight: bold; /* Negrita para las etiquetas */
+}
+
+.modalProducto form input {
+  width: 100%; /* Ancho completo del input */
+  padding: 0.5rem; /* Espaciado interno del input */
+  margin-bottom: 1rem; /* Espacio debajo del input */
+  border: 1px solid #ddd; /* Borde del input */
+  border-radius: 4px; /* Bordes redondeados del input */
+}
+
+.modalProducto button {
+  background-color: #E88BBA; /* Color de fondo del botón */
+  color: #000000; /* Color del texto del botón */
+  border: none; /* Elimina el borde del botón */
+  padding: 0.5rem 1rem; /* Espaciado interno del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  border-radius: 4px; /* Bordes redondeados del botón */
+  transition: background-color 0.2s; /* Transición suave para el cambio de color de fondo */
+  margin-top: 1rem; /* Espacio superior del botón */
+}
+
+.modalProducto button:hover {
+  background-color: #EC6AAB; /* Color de fondo del botón al pasar el ratón por encima */
+}
+
+.modalProducto-close {
+  position: absolute;  /* Posiciona el botón de cerrar en la esquina superior derecha */
+  top: 10px;
+  right: 10px;
+  background: none; /* Elimina el fondo del botón de cerrar */
+  border: none; /* Elimina el borde del botón de cerrar */
+  font-size: 1.5rem; /* Tamaño de la fuente del botón de cerrar */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón de cerrar */
+}
+
+/* Estilos para los mensajes de éxito y error */
+.error-message {
+  color: #dc3545; /* Color del texto para el mensaje de error */
+  margin-bottom: 1rem; /* Espacio debajo del mensaje de error */
+  font-weight: bold; /* Texto en negrita para resaltar el mensaje de error */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+.success-message {
+  color: #28a745; /* Color del texto para el mensaje de éxito */
+  margin-bottom: 1rem; /* Espacio debajo del mensaje de éxito */
+  font-weight: bold; /* Texto en negrita para resaltar el mensaje de éxito */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+/* Estilos para la gestión de productos en tabla */
+.gestionProductos {
+  padding: 2rem; /* Espaciado interno para la sección de gestión de productos */
+  background-color: #f9f9f9; /* Color de fondo */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para la sección */
+  max-width: 800px; /* Ancho máximo de la sección */
+  margin: 2rem auto; /* Centrado de la sección */
+}
+
+.gestionProductos h2 {
+  text-align: center; /* Alinea el texto al centro */
+  margin-bottom: 1.5rem; /* Espacio debajo del título */
+  font-size: 1.8rem; /* Tamaño de la fuente del título */
+  color: #333; /* Color del texto del título */
+}
+
+.gestionProductos button {
+  background-color: #E88BBA; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none;  /* Elimina el borde del botón */
+  padding: 0.5rem 1rem; /* Espaciado interno del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  border-radius: 4px; /* Bordes redondeados del botón */
+  transition: background-color 0.2s; /* Transición suave para el cambio de color de fondo */
+  margin-bottom: 1rem; /* Espacio debajo del botón */
+  display: block; /* Hace que el botón se alinee a la derecha */
+  margin-left: auto; 
+}
+
+.gestionProductos button:hover {
+  background-color: #EC6AAB; /* Color de fondo del botón al pasar el ratón por encima */
+}
+
+.gestionProductos form {
+  display: flex; /* Hace que los elementos del formulario se alineen horizontalmente */
+  margin-bottom: 1rem; /* Espacio debajo del formulario */
+}
+
+.gestionProductos form input {
+  flex: 1; /* Hace que el input ocupe todo el espacio disponible */
+  padding: 0.5rem; /* Espaciado interno del input */
+  border: 1px solid #ddd; /* Borde del input */
+  border-radius: 4px; /* Bordes redondeados del input */
+  margin-right: 0.5rem;  /* Espacio a la derecha del input */
+}
+
+.gestionProductos form button {
+  background-color: #E88BBA; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Elimina el borde del botón */
+  padding: 0.5rem 1rem; /* Espaciado interno del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  border-radius: 4px; /* Bordes redondeados del botón */
+  transition: background-color 0.2s; /* Transición suave para el cambio de color de fondo */
+}
+
+.gestionProductos form button:hover {
+  background-color: #EC6AAB; /* Color de fondo del botón al pasar el ratón por encima */
+}
+
+.tablaProductos {
+  width: 100%; /* Ancho completo de la tabla */
+  border-collapse: collapse; /* Elimina los espacios entre bordes de las celdas */
+  margin-top: 1rem; /* Espacio superior de la tabla */
+}
+
+.tablaProductos th, .tablaProductos td {
+  padding: 0.75rem; /* Espaciado interno de las celdas */
+  text-align: left; /* Alinea el texto a la izquierda */
+  border-bottom: 1px solid #ddd; /* Borde inferior de las celdas */
+}
+
+.tablaProductos th {
+  background-color: #E88BBA; /* Color de fondo de las celdas de encabezado */
+  color: #000000; /* Color del texto de las celdas de encabezado */
+}
+
+.tablaProductos td img {
+  border-radius: 8px; /* Bordes redondeados para las imágenes */
+  max-width: 100px; /* Ancho máximo de las imágenes */
+  max-height: 100px; /* Altura máxima de las imágenes */
+}
+
+.tablaProductos td button {
+  background-color: #dc3545; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Elimina el borde del botón */
+  padding: 0.5rem 1rem; /* Espaciado interno del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  border-radius: 4px; /* Bordes redondeados del botón */
+  transition: background-color 0.2s; /* Transición suave para el cambio de color de fondo */
+  margin-left: 0.5rem; /* Espacio a la izquierda del botón */
+}
+
+.tablaProductos td button:hover {
+  background-color: #c82333; /* Color de fondo del botón al pasar el ratón por encima */
+}
+
+.tablaProductos .edit-button {
+  background-color: #ffc107; /* Color de fondo del botón de edición */
+  color: #212529; /* Color del texto del botón de edición */
+}
+
+.tablaProductos .edit-button:hover {
+  background-color: #e0a800; /* Color de fondo del botón de edición al pasar el ratón por encima */
+}
+
+/* Estilos compartidos para mensajes de error y éxito */
+.error-message, .success-message {
+  text-align: center; /* Alinea el texto al centro */
+  font-weight: bold; /* Texto en negrita para resaltar los mensajes */
+}
+
+
+
+/***************Estilos componente Pedidos.jsx *********************/
+
+/* Contenedor principal de los pedidos */
+.pedidos-container {
+  max-width: 900px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 20px; /* Espaciado interno del contenedor */
+  font-family: Arial, sans-serif; /* Fuente a utilizar */
+}
+
+/* Tarjeta individual de cada pedido */
+.pedido-card {
+  border: 1px solid #ddd; /* Borde de la tarjeta */
+  border-radius: 8px; /* Bordes redondeados de la tarjeta */
+  margin-bottom: 20px; /* Espacio inferior de la tarjeta */
+  padding: 20px; /* Espaciado interno de la tarjeta */
+  background-color: #fff; /* Color de fondo de la tarjeta */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para la tarjeta */
+  transition: transform 0.2s; /* Transición para la transformación de la tarjeta */
+}
+
+.pedido-card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta al pasar el ratón por encima */
+}
+
+/* Encabezado y pie de la tarjeta de pedido */
+.pedido-header, .pedido-footer {
+  border-bottom: 1px solid #ddd; /* Borde inferior para separar secciones */
+  padding-bottom: 10px; /* Espaciado inferior del contenido */
+  margin-bottom: 10px; /* Margen inferior para separar secciones */
+}
+
+/* Párrafos dentro del encabezado, pie y cuerpo de la tarjeta de pedido */
+.pedido-header p, .pedido-footer p, .pedido-body p {
+  margin: 6px 0; /* Incrementado el margen para mayor separación */
+  font-size: 14px; /* Tamaño de la fuente de los párrafos */
+}
+
+/* Títulos dentro del cuerpo y pie de la tarjeta de pedido */
+.pedido-body h3, .pedido-footer h3 {
+  margin-top: 0; /* Elimina el margen superior */
+  margin-bottom: 10px; /* Margen inferior para separar títulos */
+  font-size: 18px; /* Tamaño de la fuente de los títulos */
+  color: #333; /* Color del texto de los títulos */
+}
+
+/* Elemento individual de producto dentro de la tarjeta de pedido */
+.pedido-item {
+  display: flex; /* Alinea los elementos del producto horizontalmente */
+  align-items: center; /* Centra verticalmente los elementos del producto */
+  margin-bottom: 10px; /* Margen inferior para separar productos */
+  padding: 10px; /* Espaciado interno de los productos */
+  border-radius: 5px; /* Bordes redondeados de los productos */
+  background-color: #f9f9f9; /* Color de fondo de los productos */
+}
+
+.product-image {
+  width: 60px; /* Ancho fijo de la imagen del producto */
+  height: 60px; /* Altura fija de la imagen del producto */
+  object-fit: cover; /* Asegura que la imagen del producto mantenga su proporción */
+  margin-right: 15px; /* Margen derecho para separar la imagen del contenido */
+  border-radius: 5px; /* Bordes redondeados de la imagen */
+  border: 1px solid #ddd; /* Borde de la imagen del producto */
+}
+
+/* Párrafos dentro de los detalles del producto */
+.item-details p {
+  margin: 2px 0; /* Margen para separar los párrafos */
+  font-size: 14px; /* Tamaño de la fuente de los párrafos */
+}
+
+/* Título principal de la página de pedidos */
+h2 {
+  text-align: center; /* Alinea el texto al centro */
+  color: #333; /* Color del texto del título */
+  margin-bottom: 20px; /* Espacio inferior del título */
+}
+
+/* Estilo para texto en negrita */
+p strong {
+  color: #555; /* Color del texto en negrita */
+}
+
+/* Clase general para el estado del pedido */
+.estado {
+  padding: 5px 10px; /* Espaciado interno del estado */
+  border-radius: 5px; /* Bordes redondeados del estado */
+  font-weight: bold; /* Texto en negrita para resaltar el estado */
+}
+
+.estado.pendiente {
+  color: #d9534f; /* Color del texto para el estado pendiente */
+  background-color: #f2dede; /* Color de fondo para el estado pendiente */
+}
+
+.estado.pagado {
+  color: #5cb85c; /* Color del texto para el estado pagado */
+  background-color: #dff0d8; /* Color de fondo para el estado pagado */
+}
+
+.estado.enviado {
+  color: #5bc0de; /* Color del texto para el estado enviado */
+  background-color: #d9edf7; /* Color de fondo para el estado enviado */
+}
+
+/**************************************************************/
+
+
+
+
+/***************Estilos componente MangeOrders y ModalOrders.jsx *********************/
+
+/* Estilos generales para el contenedor principal */
+.gestionar-pedidos-contenedor {
+  max-width: 1200px; /* Ajusta el ancho máximo */
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para la barra de búsqueda */
+.buscar-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Estilos para la lista de pedidos */
+.pedidos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Añade un espacio entre las tarjetas */
+  justify-content: center;
+}
+
+/* Estilos para cada tarjeta de pedido */
+.pedido-tarjeta {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: calc(28% - 20px); /* Ajusta el ancho de la tarjeta */
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.pedido-tarjeta:hover {
+  transform: translateY(-5px);
+  background-color: #f9f9f9; /* Un gris muy claro */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .pedido-tarjeta {
+    width: 100%; /* Ancho completo para dispositivos móviles */
+  }
+}
+
+/***** Estilos para el modal: ModalOrders.jsx *****/
+.modal {
+  position: fixed; /* Posicionamiento fijo del modal en toda la pantalla */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  display: flex; /* Flexbox para centrar el contenido del modal */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el contenido del modal */
+.modal-contenido {
+  background: #fff; /* Color de fondo blanco */
+  padding: 30px; /* Espaciado interno del contenido */
+  border-radius: 10px; /* Bordes redondeados del contenido */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra para el contenido */
+  width: 100%; /* Ancho máximo del contenido */
+  max-width: 700px; 
+  position: relative;/* Posición relativa para elementos internos */
+}
+
+/* Estilos para el botón de cerrar */
+.cerrar-boton {
+  position: absolute; /* Posicionamiento absoluto en la esquina superior derecha */
+  top: 15px; 
+  right: 15px;
+  background: #000000; /* Color de fondo negro */
+  border: none; /* Elimina el borde del botón */
+  font-size: 20px; /* Tamaño de fuente del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  font-weight: bold; /* Texto en negrita para resaltar el botón */
+  color: #fff; /* Color de texto blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  width: 40px; /* Ancho del botón */
+  height: 30px; /* Alto del botón */
+  display: flex; /* Flexbox para centrar el contenido del botón */
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Transición suave para la transformación */
+}
+
+.cerrar-boton:hover {
+  transform: scale(1.2); /* Agrandar el botón */
+}
+
+/* Estilos para el encabezado del modal */
+.modal-contenido h3 {
+  margin-top: 0; /* Elimina el margen superior */
+  margin-bottom: 20px; /* Margen inferior para separar el encabezado del contenido */
+  font-size: 24px; /* Tamaño de la fuente del encabezado */
+}
+
+/* Estilos para las filas del formulario */
+.form-fila {
+  display: flex; /* Flexbox para alinear los elementos del formulario */
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* Espacio inferior para separar filas */
+  gap: 10px; /* Espacio entre columnas */
+}
+
+/* Estilos para las columnas del formulario */
+.form-columna {
+  flex: 1; /* Hace que la columna ocupe el espacio disponible */
+  min-width: 150px; /* Ancho mínimo de la columna */
+}
+
+.form-columna label {
+  display: block; /* Muestra el label como bloque */
+  margin-bottom: 5px; /* Margen inferior para separar del input */
+  font-size: 14px; /* Tamaño de fuente del label */
+  font-weight: bold; /* Texto en negrita para el label */
+}
+
+.form-columna input,
+.form-columna select {
+  width: 100%; /* Ancho completo del input y select */
+  padding: 10px; /* Espaciado interno del input y select */
+  margin-top: 5px; /* Margen superior para separar del label */
+  border: 1px solid #ccc; /* Borde del input y select */
+  border-radius: 6px; /* Bordes redondeados del input y select */
+  box-sizing: border-box; /* Asegura que el padding y el borde cuenten en el tamaño total */
+  font-size: 14px; /* Tamaño de la fuente del input y select */
+}
+
+/* Estilos para la fila de botones */
+.boton-fila {
+  display: flex; /* Flexbox para alinear los botones a la derecha */
+  justify-content: flex-end;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.boton-fila button {
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 6px; /* Bordes redondeados del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  font-size: 16px; /* Tamaño de fuente del botón */
+}
+
+.boton-fila button:first-of-type {
+  background-color: #28a745;  /* Color de fondo para el primer botón */
+  color: #fff; /* Color del texto del primer botón */
+}
+
+.boton-fila button:nth-of-type(2) {
+  background-color: #dc3545; /* Color de fondo para el segundo botón */
+  color: #fff; /* Color del texto del segundo botón */
+}
+
+.boton-fila button:hover {
+  opacity: 0.9; /* Cambia la opacidad al pasar el ratón por encima */
+}
+
+/* Estilos para el estado */
+.estado {
+  font-weight: bold; /* Texto en negrita para resaltar el estado */
+}
+
+.estado-pendiente {
+  color: #ffa500; /* Color naranja */
+}
+
+.estado-pagado {
+  color: #008000; /* Color verde */
+}
+
+.estado-enviado {
+  color: #0000ff; /* Color azul */
+}
+
+/**** Estilos para el modal de confirmación, del ModalOrders.jsx ****/
+.modal-confirmacion {
+  position: fixed; /* Posicionamiento fijo del modal de confirmación en toda la pantalla */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para oscurecer el resto de la pantalla */
+  display: flex; /* Flexbox para centrar el contenido del modal de confirmación */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-contenido-confirmacion {
+  background: #fff; /* Color de fondo blanco para el contenido */
+  padding: 30px; /* Espaciado interno del contenido */
+  border-radius: 10px; /* Bordes redondeados del contenido */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra para el contenido */
+  width: 100%; /* Ancho completo del contenido */
+  max-width: 400px; /* Ancho máximo del contenido */
+  position: relative; /* Posición relativa para elementos internos */
+  text-align: center; /* Centra el texto en el contenido */
+}
+
+.confirmacion-logo {
+  font-size: 50px; /* Tamaño de fuente para el logo o ícono de confirmación */
+  color: #dc3545; /* Color del logo o ícono de confirmación */
+  margin-bottom: 20px; /* Margen inferior para separar del mensaje */
+}
+
+.confirmacion-mensaje {
+  font-size: 18px; /* Tamaño de fuente para el mensaje de confirmación */
+  margin-bottom: 20px; /* Margen inferior para separar del botón */
+}
+
+.boton-confirmacion-fila {
+  display: flex; /* Flexbox para alinear los botones de confirmación */
+  justify-content: space-around; /* Espacio entre los botones */
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.boton-confirmacion-fila button {
+  padding: 10px 20px;  /* Espaciado interno del botón */
+  border: none;  /* Elimina el borde del botón */
+  border-radius: 6px; /* Bordes redondeados del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  font-size: 16px; /* Tamaño de fuente del botón */
+}
+
+.boton-confirmacion-fila button:first-of-type {
+  background-color: #28a745; /* Color de fondo para el primer botón (confirmar) */
+  color: #fff; /* Color del texto del primer botón */
+}
+
+.boton-confirmacion-fila button:nth-of-type(2) {
+  background-color: #dc3545; /* Color de fondo para el segundo botón (cancelar) */
+  color: #fff; /* Color del texto del segundo botón */
+}
+
+.boton-confirmacion-fila button:hover {
+  opacity: 0.9; /* Cambia la opacidad al pasar el ratón por encima */
+}
+
+
+/****************************************************************************/
+
+
+/***************Estilos componente UpdateUser.jsx *********************/
+
+/* Contenedor principal del formulario */
+.update-user-form {
+  max-width: 400px; /* Ancho máximo del formulario */
+  margin: 50px auto; /* Centramos el formulario en la pantalla */
+  padding: 20px;  /* Espaciado interno del formulario */
+  background-color: #fff; /* Color de fondo del formulario */
+  border: 1px solid #e0e0e0; /* Borde del formulario */
+  border-radius: 8px; /* Bordes redondeados del formulario */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para el formulario */
+}
+
+/* Título del formulario */
+.update-user-form h2 {
+  text-align: center; /* Centramos el texto del título */
+  margin-bottom: 20px; /* Margen inferior para separar del contenido */
+  color: #333; /* Color del texto del título */
+  font-family: 'Roboto', sans-serif; /* Fuente del título */
+  font-size: 24px; /* Tamaño de fuente del título */
+}
+
+/* Mensajes de error */
+.update-user-form .error {
+  color: red; /* Color del texto de error */
+  text-align: center; /* Centramos el texto del error */
+  margin-bottom: 10px; /* Margen inferior para separar del contenido */
+}
+
+/* Mensajes de éxito */
+.update-user-form .success {
+  color: green; /* Color del texto de éxito */
+  text-align: center; /* Centramos el texto del éxito */
+  margin-bottom: 10px; /* Margen inferior para separar del contenido */
+}
+
+/* Formulario */
+.update-user-form form {
+  display: flex; /* Flexbox para organizar los elementos en columna */
+  flex-direction: column; 
+  align-items: center; /* Centrar elementos del formulario */
+}
+
+/* Grupos de formulario */
+.update-user-form .form-group {
+  margin-bottom: 15px; /* Espaciado entre los grupos de formulario */
+  width: 100%; /* Asegurar que los grupos ocupen todo el ancho */
+  display: flex; /* Flexbox para organizar los elementos dentro del grupo */
+  flex-direction: column;
+  align-items: flex-start; /* Alinear etiquetas al inicio */
+}
+
+/* Etiquetas */
+.update-user-form label {
+  margin-bottom: 5px; /* Margen inferior para separar de los campos de entrada */
+  color: #555; /* Color del texto de la etiqueta */
+  font-family: 'Roboto', sans-serif; /* Fuente de la etiqueta */
+  font-size: 14px; /* Tamaño de fuente de la etiqueta */
+  display: block; /* Hacer que las etiquetas ocupen toda la línea */
+  width: 100%; /* Hacer que las etiquetas ocupen toda la línea */
+}
+
+/* Campos de entrada */
+.update-user-form input {
+  padding: 10px; /* Espaciado interno del campo de entrada */
+  width: 100%; /* Asegurar que los inputs ocupen todo el ancho disponible */
+  border: 1px solid #ccc; /* Borde del campo de entrada */
+  border-radius: 4px; /* Bordes redondeados del campo de entrada */
+  font-size: 16px;  /* Tamaño de fuente del campo de entrada */
+  color: #333; /* Color del texto del campo de entrada */
+  font-family: 'Roboto', sans-serif; /* Fuente del campo de entrada */
+  transition: border-color 0.3s ease; /* Transición suave para el borde al estar en foco */
+}
+
+/* Campos de entrada cuando están en foco */
+.update-user-form input:focus {
+  border-color: #007bff; /* Cambia el color del borde al enfocar */
+  outline: none; /* Elimina el contorno predeterminado */
+}
+
+/* Botón de envío */
+.update-user-form button {
+  padding: 12px 24px; /* Ajustar padding */
+  background-color: #013220; /* Color verde oscuro */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 4px; /* Bordes redondeados del botón */
+  color: white;  /* Color del texto del botón */
+  font-size: 16px;  /* Tamaño de fuente del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease;  /* Transición suave para el color de fondo */
+  font-family: 'Roboto', sans-serif;  /* Fuente del botón */
+  width: 100%; /* Asegurar que el botón ocupe todo el ancho disponible */
+}
+
+.update-user-form button:hover {
+  background-color: #011910; /* Color del botón en hover */
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+  .update-user-form {
+    margin: 20px; /* Ajusta el margen en pantallas pequeñas */
+    padding: 15px; /* Ajusta el padding en pantallas pequeñas */
+  }
+
+  .update-user-form h2 {
+    font-size: 20px; /* Tamaño de fuente del título en pantallas pequeñas */
+  }
+
+  .update-user-form input {
+    font-size: 14px; /* Tamaño de fuente de los inputs en pantallas pequeñas */
+  }
+
+  .update-user-form button {
+    font-size: 14px; /* Tamaño de fuente del botón en pantallas pequeñas */
+  }
+}
+
+/* Estilos específicos para el enlace de bienvenida dentro del span */
+span a {
+  color: white; /* Color del texto */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-weight: bold; /* Hacer que el texto sea negrita */
+  padding: 0 10px; /* Añade padding a los lados */
+}
+
+span a:hover {
+  color: #003366; /* Color del texto al pasar el cursor */
+}
+
+/****************************************************************************/
