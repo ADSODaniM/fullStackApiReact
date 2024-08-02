@@ -14,6 +14,7 @@ import axios from 'axios'; // Importar axios
 import Register from './components/Register';
 import Login from './components/Login';
 import ManageProducts from './components/ManageProducts';
+import Pedidos from './components/Pedidos';
 
 // Datos iniciales de los productos
 const initialProducts = [];
@@ -183,6 +184,7 @@ const App = () => {
           puedan acceder a ella mediante el componente `PrivateRoute`. Si el usuario tiene el rol adecuado, 
           se renderiza el componente `ManageProducts`. De lo contrario, `PrivateRoute` muestra un mensaje de acceso denegado.*/}
         <Route path="/manage-products" element={<PrivateRoute><ManageProducts /></PrivateRoute>} />
+        <Route path="/pedidos" element={<Pedidos />} /> {/* Nueva ruta para el componente Pedidos */}
 
       </Routes>
             {/* Condicional para mostrar el menú del carrito si showCartMenu es verdadero */}

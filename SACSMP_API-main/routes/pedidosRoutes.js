@@ -19,5 +19,8 @@ router.put('/pedidos/:idPedido', pedidosController.actualizarPedido);
 // Elimina un pedido
 router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido);
 
+// Muestra todos los pedidos del cliente por su ID
+router.get('/pedidos/cliente/:idCliente', pedidosController.mostrarPedidosCliente);
+
 // Exportar el router para que pueda ser usado en otros archivos
 module.exports = router;

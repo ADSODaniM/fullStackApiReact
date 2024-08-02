@@ -31,6 +31,7 @@ const Register = () => {
       // Si la solicitud es exitosa, actualiza el mensaje y almacena el nombre de usuario en el localStorage
       setMessage('Registro exitoso');
       localStorage.setItem('username', formData.username);
+      localStorage.setItem('role', 'usuario'); // Guardar el rol en localStorage
       window.dispatchEvent(new Event('storage')); // Disparar evento de almacenamiento
       navigate('/'); // Navega a la página de inicio
     } catch (error) {

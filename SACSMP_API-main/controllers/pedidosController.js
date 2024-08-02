@@ -84,3 +84,20 @@ exports.eliminarPedido = async (req, res, next) => {
         next();
     }
 };
+
+// Muestra todos los pedidos de un cliente específico
+exports.mostrarPedidosCliente = async (req, res, next) => {
+    try {
+        // Busca todos los pedidos en la base de datos que coincidan con el ID del cliente proporcionado en los parámetros de la solicitud
+        const pedidos = await Pedido.find({ cliente: req.params.idCliente })
+            .populate('cliente', '-password') // Rellena el campo 'cliente' con los datos del cliente, excluyendo el campo 'password'
+            .populate('pedido.producto'); // Rellena el campo 'producto' dentro de cada pedido con los datos del producto correspondiente
+            // Envía la lista de pedidos encontrados como respuesta en formato JSON
+            res.json(pedidos);
+    } catch (error) {
+         // Si ocurre un error, lo registra en la consola
+        console.log(error);
+        // Llama al siguiente middleware o manejador de errores en la cadena de middleware
+        next();
+    }
+};
