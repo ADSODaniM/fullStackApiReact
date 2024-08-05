@@ -15,6 +15,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import ManageProducts from './components/ManageProducts';
 import Pedidos from './components/Pedidos';
+import ManageOrders from './components/ManageOrders'; // Importar componente de gestión de pedidos
 
 // Datos iniciales de los productos
 const initialProducts = [];
@@ -185,6 +186,7 @@ const App = () => {
           se renderiza el componente `ManageProducts`. De lo contrario, `PrivateRoute` muestra un mensaje de acceso denegado.*/}
         <Route path="/manage-products" element={<PrivateRoute><ManageProducts /></PrivateRoute>} />
         <Route path="/pedidos" element={<Pedidos />} /> {/* Nueva ruta para el componente Pedidos */}
+        <Route path="/manage-orders" element={<PrivateRoute><ManageOrders /></PrivateRoute>} /> {/* Ruta para gestionar pedidos */}
 
       </Routes>
             {/* Condicional para mostrar el menú del carrito si showCartMenu es verdadero */}

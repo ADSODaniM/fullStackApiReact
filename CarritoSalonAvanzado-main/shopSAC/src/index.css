@@ -1026,3 +1026,16 @@ span a:hover {
 }
 
 /****************************************************************************/
+
+.error-mensaje {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #edcacc;
+  color: #65030d;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
