@@ -971,7 +971,7 @@ p strong {
 
 /* Campos de entrada cuando están en foco */
 .update-user-form input:focus {
-  border-color: #007bff; /* Cambia el color del borde al enfocar */
+  border-color: #EC6AAB; /* Cambia el color del borde al enfocar */
   outline: none; /* Elimina el contorno predeterminado */
 }
 
